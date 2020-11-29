@@ -242,7 +242,6 @@ html {
     text-decoration: none;
   }
 
-
   input:checked + span {
     width: 25px;
     height: 25px;
@@ -560,7 +559,7 @@ header {
       }
     }
     @include respond(0, 1644px) {
-      max-width: 260px;
+      max-width: 260px !important;
       svg {
         margin-left: 18px;
       }
