@@ -309,12 +309,23 @@ form {
   padding-left: 34px;
   font-family: "Proxima Nova Lt", sans-serif;
   font-size: 20px;
-  display: flex;
   margin-top: 32px;
+  padding-bottom: 112px;
+
+  @include respond(1040px) {
+    display: flex;
+  }
 
   .column {
     flex: 1;
     &:first-child {
+      padding-right: 20px;
+      box-sizing: border-box;
+
+      @include respond(0, 1040px) {
+        margin-bottom: 32px;
+      }
+
       li {
         max-width: 565px;
       }
@@ -368,6 +379,100 @@ form {
   }
 }
 
+.page__subtitle {
+  font-family: "Bebas Neue", sans-serif;
+  color: $black;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 1.4;
+  position: relative;
+  letter-spacing: .4px;
+  @include respond(690px) {
+    padding-left: 32px;
+  }
+  @include respond(0, 690px) {
+    padding-left: 20px;
+  }
+  &:before {
+    pointer-events: none;
+    user-select: none;
+    background: $black;
+    content: '';
+    position: absolute;
+    width: 3px;
+    top: -4px;
+    left: -1px;
+    bottom: -1px;
+  }
+}
+
+.schema {
+
+  @include respond(1180px) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .column {
+    &:first-child {
+      @include respond(1180px) {
+        max-width: 563px;
+        width: 100%;
+      }
+      @include respond(0, 1180px) {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  .image {
+    @include respond(1180px) {
+      transform: translateY(61px);
+    }
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.individual__gray-block {
+  background: $gray-background;
+  padding-top: 71px;
+  @include respond(1180px) {
+    padding-bottom: 166px;
+  }
+  @include respond(0, 1180px) {
+    padding-bottom: 56px;
+  }
+}
+
+.individual__schema {
+  font-size: 18px;
+  font-family: "Proxima Nova Rg", sans-serif;
+  padding-left: 35px;
+  padding-top: 81px;
+  .value {
+    font-family: "Proxima Nova Lt", sans-serif;
+    font-weight: 600;
+    i {
+      font-family: "Proxima Nova Rg", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+  .field {
+    flex: 1;
+    max-width: 395px;
+  }
+  .row {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+}
+
 .individual__page {
   @include respond(1020px) {
     padding-top: 150px;
@@ -401,23 +506,19 @@ form {
     }
   }
 
-  .individual__page-steps {
-    margin-top: 158px;
-    font-family: "Bebas Neue", sans-serif;
-    color: $black;
-    font-weight: bold;
-    font-size: 44px;
-    line-height: 1.4;
-    position: relative;
+  .steps__title {
     max-width: 370px;
-    letter-spacing: .4px;
-    @include respond(690px) {
-      padding-left: 32px;
-    }
-    @include respond(0, 690px) {
-      padding-left: 20px;
-    }
 
+    @include respond(0, 1040px) {
+      margin-top: 70px;
+    }
+    @include respond(1040px) {
+      margin-top: 158px;
+    }
+  }
+
+  .individual__title {
+    max-width: 500px;
   }
 
   .individual__page-subtitle {
@@ -478,7 +579,7 @@ form {
 }
 
 footer {
-  background: $footer-background;
+  background: $gray-background;
   flex: 0 0 auto;
   padding: 43px 0;
 
