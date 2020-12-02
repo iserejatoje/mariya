@@ -310,10 +310,14 @@ form {
   font-family: "Proxima Nova Lt", sans-serif;
   font-size: 20px;
   margin-top: 32px;
-  padding-bottom: 112px;
 
   @include respond(1040px) {
+    padding-bottom: 112px;
     display: flex;
+  }
+
+  @include respond(0, 1040px) {
+    padding-bottom: 70px;
   }
 
   .column {
@@ -356,7 +360,13 @@ form {
     line-height: 1.6;
     letter-spacing: .1px;
     &.last {
-      margin-top: 64px;
+      @include respond(1020px) {
+        margin-top: 64px;
+      }
+      @include respond(0, 1020px) {
+        margin-top: 32px;
+      }
+
       letter-spacing: 0;
     }
     &:not(:last-child) {
@@ -376,6 +386,47 @@ form {
 
   @include respond(1020px) {
     justify-content: flex-end;
+  }
+}
+
+.small-title {
+  font-family: "Proxima Nova Lt",sans-serif;
+  color: $black;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.6;
+  position: relative;
+  max-width: 411px;
+  margin-left: 32px;
+  margin-top: 25px;
+}
+
+.large-title {
+  font-family: "Bebas Neue", sans-serif;
+  color: $black;
+  font-weight: bold;
+  font-size: 73px;
+  line-height: 1.194;
+  position: relative;
+  max-width: 360px;
+  letter-spacing: .4px;
+
+  @include respond(690px) {
+    padding-left: 32px;
+  }
+  @include respond(0, 690px) {
+    padding-left: 20px;
+  }
+  &:before {
+    pointer-events: none;
+    user-select: none;
+    background: $black;
+    content: '';
+    position: absolute;
+    width: 3px;
+    top: -4px;
+    left: -1px;
+    bottom: -1px;
   }
 }
 
@@ -449,7 +500,13 @@ form {
   font-size: 18px;
   font-family: "Proxima Nova Rg", sans-serif;
   padding-left: 35px;
-  padding-top: 81px;
+  @include respond(640px) {
+    padding-top: 81px;
+  }
+  @include respond(0, 640px) {
+    padding-top: 65px;
+  }
+
   .value {
     font-family: "Proxima Nova Lt", sans-serif;
     font-weight: 600;
@@ -465,7 +522,9 @@ form {
   }
   .row {
     display: flex;
-
+    @include respond(0, 640px) {
+      flex-direction: column;
+    }
     &:not(:last-child) {
       margin-bottom: 25px;
     }
@@ -479,6 +538,24 @@ form {
   }
   @include respond(0, 1020px) {
     padding-top: 52px;
+  }
+
+  .contact__columns .column:first-child {
+    margin-bottom: 20px;
+  }
+
+  form {
+
+    @include respond(0, 1200px) {
+      padding-left: 32px;
+    }
+    @include respond(1200px) {
+      margin-top: 110px;
+    }
+  }
+
+  .contact__columns {
+    padding: 123px 0 94px 0;
   }
 
   .individual__page-excerpt {
