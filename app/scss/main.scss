@@ -687,6 +687,7 @@ img {
   }
 }
 
+:active,
 :focus {
   -webkit-tap-highlight-color: transparent;
 }
@@ -707,11 +708,28 @@ img {
 
   }
 
+  .project__card-touch {
+    .project__detail-link {
+      display: none;
+    }
+  }
+
+  .project__detail-link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+  }
+
   img {
     max-width: 100%;
   }
 
   .detail__link {
+    color: $white;
+    text-decoration: none;
     display: flex;
     font-size: 16px;
     align-items: center;
@@ -771,7 +789,7 @@ img {
           padding: 32px 44px 15px;
         }
         @include respond(0, 1230px) {
-          padding: 32px 32px 15px;
+          padding: 20px 20px 5px;
         }
 
       }
@@ -811,8 +829,11 @@ img {
       @include respond(1230px) {
         padding: 32px 44px 65px;
       }
-      @include respond(0, 1230px) {
-        padding: 32px 32px 65px;
+      @include respond(490px, 1230px) {
+        padding: 22px 32px 75px;
+      }
+      @include respond(0, 490px) {
+        padding: 20px 20px 75px;
       }
 
       .column {
