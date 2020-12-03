@@ -761,12 +761,19 @@ img {
       transition: opacity 300ms ease, visibility 300ms ease;
 
       .excerpt {
-        padding: 32px 44px 15px;
         box-sizing: border-box;
         font-size: 17px;
         line-height: 1.706;
         min-height: 225px;
         font-family: "Proxima Nova Rg", sans-serif;
+
+        @include respond(1230px) {
+          padding: 32px 44px 15px;
+        }
+        @include respond(0, 1230px) {
+          padding: 32px 32px 15px;
+        }
+
       }
 
       svg {
