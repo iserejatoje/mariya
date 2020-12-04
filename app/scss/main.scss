@@ -784,7 +784,7 @@ select {
 .filter__block {
   margin-top: 85px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, max(243px));
+  grid-template-columns: repeat(auto-fill, minmax(243px, 1fr));
   padding-left: 44px;
   grid-row-gap: 64px;
 
