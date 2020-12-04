@@ -18,6 +18,7 @@
   url('../fonts/ProximaNova-LightIt.woff') format('woff'),
   url('../fonts/ProximaNova-LightIt.ttf') format('truetype');
   font-weight: 300;
+  font-display: swap;
   font-style: italic;
 }
 
@@ -74,6 +75,7 @@
   url('../fonts/ProximaNova-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -480,6 +482,7 @@
   url('../fonts/BebasNeueBold.woff') format('woff'),
   url('../fonts/BebasNeueBold.ttf') format('truetype');
   font-weight: bold;
+  font-display: swap;
   font-style: normal;
 }
 

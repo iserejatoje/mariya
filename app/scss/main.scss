@@ -1,3 +1,4 @@
+@import "../css/normalize.css";
 @import "variables";
 @import "selectric";
 @import "fonts";
@@ -1075,7 +1076,6 @@ footer {
     fill: $green;
   }
 }
-
 
 .green-button {
   @include ProximaNovaMedium;
