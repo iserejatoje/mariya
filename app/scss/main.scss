@@ -156,8 +156,11 @@ body {
     @include respond(1020px) {
       font-size: 72px;
     }
-    @include respond(0, 1020px) {
+    @include respond(640px, 1020px) {
       font-size: 44px;
+    }
+    @include respond(0, 640px) {
+      font-size: 30px;
     }
 
     font-family: "Bebas Neue", sans-serif;
@@ -777,9 +780,16 @@ select {
 }
 
 .filter__block {
-  margin-top: 85px;
   position: relative;
   display: grid;
+
+  @include respond(640px) {
+    margin-top: 85px;
+  }
+
+  @include respond(0, 640px) {
+    margin-top: 42px;
+  }
 
   @include respond(577px) {
     padding-left: 44px;
@@ -993,8 +1003,11 @@ select {
   @include respond(1020px) {
     padding-top: 131px;
   }
-  @include respond(0, 1020px) {
+  @include respond(640px, 1020px) {
     padding-top: 52px;
+  }
+  @include respond(0, 640px) {
+    padding-top: 37px;
   }
 
 }
