@@ -692,12 +692,143 @@ img {
   -webkit-tap-highlight-color: transparent;
 }
 
+.sorting {
+  font-family: "Proxima Nova Rg", sans-serif;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  align-items: center;
+
+  .found {
+    span {
+      font-family: "Proxima Nova Lt", sans-serif;
+      font-weight: 600;
+      color: $green;
+      display: inline-block;
+      border-bottom: 1px dotted $light-gray;
+      line-height: 1.3;
+    }
+  }
+}
+
+.pagination {
+  margin-top: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 98px;
+  .pages {
+    display: flex;
+    align-items: center;
+    a,
+    span {
+      margin: 0 14px;
+    }
+    .active {
+      font-size: 24px;
+      font-family: "Proxima Nova Rg", sans-serif;
+      color: $green;
+    }
+    a {
+      font-size: 16px;
+      font-family: "Proxima Nova Lt", sans-serif;
+      font-weight: 600;
+      color: $black;
+      text-decoration: none;
+    }
+  }
+  a {
+    text-decoration: none;
+    outline: 0;
+  }
+  svg {
+    display: block;
+  }
+  .prev,
+  .next {
+    padding: 19px 21px;
+    &:hover {
+      background: linear-gradient(-10deg, rgb(23,161,165) 0%, rgb(142,218,192) 100%);
+      svg {
+        fill: $white;
+      }
+    }
+  }
+  .next {
+    margin-left: 5px;
+  }
+  .prev {
+    svg {
+      transform: scale(-1, -1);
+    }
+  }
+}
+
+.select {
+  max-width: 315px;
+  width: 100%;
+  height: 60px;
+  position: relative;
+  &.opened {
+    .current {
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+    .list {
+      border-top: 2px solid $green;
+      display: block;
+    }
+  }
+  .current {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 60px;
+    background: $select-background;
+    padding: 0 17px;
+    user-select: none;
+    font-family: "Proxima Nova Lt", sans-serif;
+    font-weight: 600;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 17px;
+      width: 18px;
+      height: 10px;
+      pointer-events: none;
+      background: url(../images/sprite.svg#select) no-repeat center / 33px 30px;
+    }
+  }
+  .list {
+    position: absolute;
+    background: $select-list-background;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    z-index: 30;
+
+    .item {
+      cursor: default;
+      padding: 17px 17px;
+
+      &:hover {
+        background: $green;
+        color: $white;
+      }
+    }
+  }
+}
+
 .projects__gray-block {
   margin-top: 50px;
   padding: 60px 0;
   background: $projects-background;
 
   .projects__grid {
+    position: relative;
     display: grid;
     grid-gap: 30px;
 
@@ -1157,7 +1288,7 @@ header {
     @include respond(1644px) {
       margin-left: auto;
     }
-    img {
+    svg {
       display: block;
       max-width: 100%;
     }
