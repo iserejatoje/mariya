@@ -1,4 +1,5 @@
 @import "variables";
+@import "selectric";
 @import "fonts";
 
 @mixin ProximaNovaMedium {
@@ -695,10 +696,14 @@ img {
 .sorting {
   font-family: "Proxima Nova Rg", sans-serif;
   font-size: 18px;
-  display: flex;
-  justify-content: space-between;
+  position: relative;
   margin-bottom: 40px;
   align-items: center;
+
+  @include respond(640px) {
+    display: flex;
+    justify-content: space-between;
+  }
 
   .found {
     span {
@@ -715,9 +720,12 @@ img {
 .pagination {
   margin-top: 45px;
   display: flex;
+  position: relative;
   align-items: center;
-  justify-content: flex-end;
   margin-bottom: 98px;
+  @include respond(510px) {
+    justify-content: flex-end;
+  }
   .pages {
     display: flex;
     align-items: center;
@@ -765,60 +773,36 @@ img {
   }
 }
 
-.select {
+.light__select {
+  height: 42px;
+}
+
+select {
+  opacity: 0;
+}
+
+.filter__block {
+  margin-top: 85px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, max(243px));
+  padding-left: 44px;
+  grid-row-gap: 64px;
+
+  label {
+    font-family: "Proxima Nova Rg", sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+}
+
+.sort__select {
   max-width: 315px;
   width: 100%;
   height: 60px;
-  position: relative;
-  &.opened {
-    .current {
-      &:after {
-        transform: rotate(180deg);
-      }
-    }
-    .list {
-      border-top: 2px solid $green;
-      display: block;
-    }
-  }
-  .current {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    height: 60px;
-    background: $select-background;
-    padding: 0 17px;
-    user-select: none;
-    font-family: "Proxima Nova Lt", sans-serif;
-    font-weight: 600;
-    &:after {
-      content: '';
-      position: absolute;
-      right: 17px;
-      width: 18px;
-      height: 10px;
-      pointer-events: none;
-      background: url(../images/sprite.svg#select) no-repeat center / 33px 30px;
-    }
-  }
-  .list {
-    position: absolute;
-    background: $select-list-background;
-    top: 100%;
-    left: 0;
-    right: 0;
-    display: none;
-    z-index: 30;
 
-    .item {
-      cursor: default;
-      padding: 17px 17px;
-
-      &:hover {
-        background: $green;
-        color: $white;
-      }
-    }
+  @include respond(0, 640px) {
+    margin-bottom: 25px;
   }
 }
 
@@ -1103,10 +1087,36 @@ footer {
   letter-spacing: 0.8px;
   justify-content: center;
 
-  &:not(.wild) {
+  &.filter__button {
+    height: 60px;
+    transform: translateY(6px);
+
+    &:hover {
+      svg {
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  &:not(.wild):not(.filter__button) {
     max-width: 330px;
     height: 90px;
   }
+
+  &.wild,
+  &:not(.wild):not(.filter__button) {
+    &:hover {
+      svg {
+        @include respond(1644px) {
+          transform: translateX(15px);
+        }
+        @include respond(0, 1644px) {
+          transform: translateX(10px);
+        }
+      }
+    }
+  }
+
   &.wild {
     max-width: 370px;
     height: 92px;
@@ -1119,16 +1129,21 @@ footer {
     transition: transform 500ms ease;
   }
 
-  &:hover {
-    svg {
-      @include respond(1644px) {
-        transform: translateX(15px);
-      }
-      @include respond(0, 1644px) {
-        transform: translateX(10px);
-      }
-    }
-  }
+}
+
+.reset__filter {
+  text-decoration: none;
+  color: transparentize($black, .5);
+  font-size: 18px;
+  font-family: "Proxima Nova Lt", sans-serif;
+  font-weight: 600;
+  margin-left: 44px;
+  display: inline-block;
+  border-bottom: 1px dotted transparentize($black, .6);
+  margin-top: 20px;
+  letter-spacing: .5px;
+  margin-bottom: 27px;
+  line-height: 1.4;
 }
 
 .contacts {

@@ -13,18 +13,7 @@ $(document).ready(function () {
 
     $('[type="tel"]').mask('+7 (999) 999-99-99');
 
-    function toggleSelect(element) {
-    }
-
-    $('.select')
-        .on('click', function(e) {
-            if ($(this).hasClass('opened')) {
-                $(this).removeClass('opened');
-            } else {
-                $(this).addClass('opened');
-            }
-            e.stopPropagation();
-        })
+    $('select').selectric();
 
     $('.input')
         .on('focus', 'input', function () {

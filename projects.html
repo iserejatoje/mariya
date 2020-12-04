@@ -8,6 +8,7 @@
     <title>Mariya Fedorova &mdash; Architect</title>
     <link rel="stylesheet" href="app/css/normalize.css">
     <link rel="stylesheet" href="app/css/app.min.css">
+
 </head>
 <body>
 
@@ -66,16 +67,126 @@
                 <h1 class="with__line layer__block--30">Каталог проектов</h1>
             </div>
 
+            <div class="container">
+                <div class="filter__block">
+                    <div class="item">
+                        <label for="">
+                            Тип строения
+                        </label>
+                        <div class="light__select">
+                            <select name="" class="light">
+                                <option value="">Не важно</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label for="">
+                            Стеновой материал
+                        </label>
+                        <div class="light__select">
+                            <select name="" class="light">
+                                <option value="">Любой</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label for="">
+                            Общая площадь, м<sup>2</sup>
+                        </label>
+                        <div class="light__select">
+                            <select name="" class="light">
+                                <option value="">72 - 289</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label for="">
+                            Число этажей
+                        </label>
+                        <div class="light__select">
+                            <select name="" class="light">
+                                <option value="">1 - 3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label for="">
+                            Число комнат
+                        </label>
+                        <div class="light__select">
+                            <select name="" class="light">
+                                <option value="">3 - 15</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label for="">
+                            Помещения
+                        </label>
+                        <div class="light__select">
+                            <select name="" class="light">
+                                <option value="">Любые</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label for="">
+                            Длина
+                        </label>
+                        <div class="light__select">
+                            <select name="" class="light">
+                                <option value="">0 - 50 м</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label for="">
+                            Ширина
+                        </label>
+                        <div class="light__select">
+                            <select name="" class="light">
+                                <option value="">0 - 75 м</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <label for="">
+                            Число гаражей
+                        </label>
+                        <div class="light__select">
+                            <select name="" class="light">
+                                <option value="">0 - 5</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <a href="javascript:void(0);" class="green-button filter__button">
+                            Подобрать <svg width="65" height="22"><use xlink:href="app/images/sprite.svg#arrow"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="" class="reset__filter">Сбросить фильтры</a>
+            </div>
+
             <div class="projects__gray-block">
-                <div class="container layer__block--20">
-                    <div class="sorting">
-                        <div class="select">
-                            <div class="current">По популярности</div>
-                            <div class="list">
-                                <div class="item" data-value="">По популярности</div>
-                                <div class="item" data-value="price">По цене</div>
-                                <div class="item" data-value="area">По площади</div>
-                            </div>
+                <div class="container">
+                    <div class="sorting layer__block--20">
+                        <div class="sort__select">
+                            <select name="sort" id="sort" class="sort">
+                                <option value="popular">По популярности</option>
+                                <option value="price">По цене</option>
+                                <option value="area">По площади</option>
+                            </select>
                         </div>
                         <div class="found">
                             Найдено проектов: <span class="count">634</span>
@@ -84,7 +195,7 @@
                 </div>
 
                 <div class="container">
-                    <div class="projects__grid layer__block--20">
+                    <div class="projects__grid layer__block--10">
                         <div class="project__card">
                             <a href="" aria-label="Подробнее о проекте" class="project__detail-link"></a>
                             <div class="overlay">
@@ -341,7 +452,7 @@
                 </div>
 
                 <div class="container">
-                    <div class="pagination">
+                    <div class="pagination layer__block--30">
                         <a href="" class="prev">
                             <svg width="65" height="22"><use xlink:href="app/images/sprite.svg#arrow"></use></svg>
                         </a>
@@ -393,6 +504,7 @@
 
 <script src="app/js/jquery.min.js"></script>
 <script src="app/js/jquery.mask.min.js"></script>
+<script src="app/js/jquery.selectric.min.js"></script>
 <script src="app/js/app.min.js"></script>
 
 </body>
