@@ -14,9 +14,12 @@ $inner-height   : $height;
 }
 
 .selectric-light {
-  max-width: 202px;
   height: 40px;
   border-bottom: 2px solid $green;
+
+  @include respond(577px) {
+    max-width: 202px;
+  }
 
   .label {
     line-height: 30px;
