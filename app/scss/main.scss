@@ -81,7 +81,12 @@ body {
       margin-bottom: 34px;
 
       a {
-        font-size: 20px;
+        @include respond(450px) {
+          font-size: 20px;
+        }
+        @include respond(0, 450px) {
+          font-size: 18px;
+        }
         @include ProximaNovaMedium;
         color: $black;
         text-decoration: none;
@@ -95,11 +100,17 @@ body {
 
     .number {
       font-family: "Bebas Neue", sans-serif;
-      font-size: 44px;
       text-decoration: none;
       color: $black;
       font-weight: bold;
       letter-spacing: .7px;
+
+      @include respond(450px) {
+        font-size: 44px;
+      }
+      @include respond(0, 450px) {
+        font-size: 34px;
+      }
     }
 
   }
@@ -668,7 +679,7 @@ img {
     padding-top: 131px;
   }
   @include respond(0, 1020px) {
-    padding-top: 52px;
+    padding-top: 30px;
   }
 
   h2 {
@@ -1007,7 +1018,7 @@ select {
     padding-top: 52px;
   }
   @include respond(0, 640px) {
-    padding-top: 37px;
+    padding-top: 30px;
   }
 
 }
