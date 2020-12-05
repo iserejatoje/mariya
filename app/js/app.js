@@ -13,7 +13,8 @@ $(document).ready(function () {
 
     $('[type="tel"]').mask('+7 (999) 999-99-99');
 
-    $('select').selectric();
+    if ($('select').length > 0)
+        $('select').selectric();
 
     $('.input')
         .on('focus', 'input', function () {
