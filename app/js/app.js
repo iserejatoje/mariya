@@ -23,34 +23,34 @@ $(document).ready(function () {
             }
         });
 
-    let $similar_slider = $('.similar__slider');
-    if ($similar_slider.length > 0) {
-        let owl = $similar_slider.owlCarousel({
-            margin: 30,
-            dots: false,
-            responsive : {
-                0 : {
-                    items: 1,
-                },
-                760 : {
-                    items: 2,
-                },
-                1366 : {
-                    items: 3,
-                }
-            }
-        });
-        $('.prev-slider').click(function() {
-            owl.trigger('prev.owl.carousel', [300]);
-        });
-        $('.next-slider').click(function() {
-            owl.trigger('next.owl.carousel', [300]);
-        });
-    }
-
     $('.tabs')
         .on('click', '.tab', function () {
             $('body,html').animate({'scrollTop': $('.tab-' + $(this).index()).offset().top - 40})
             return false;
         });
 });
+
+let $similar_slider = $('.similar__slider');
+if ($similar_slider.length > 0) {
+    let owl = $similar_slider.owlCarousel({
+        margin: 30,
+        dots: false,
+        responsive : {
+            0 : {
+                items: 1,
+            },
+            760 : {
+                items: 2,
+            },
+            1366 : {
+                items: 3,
+            }
+        }
+    });
+    $('.prev-slider').click(function() {
+        owl.trigger('prev.owl.carousel', [300]);
+    });
+    $('.next-slider').click(function() {
+        owl.trigger('next.owl.carousel', [300]);
+    });
+}
