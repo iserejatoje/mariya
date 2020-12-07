@@ -1423,7 +1423,7 @@ footer {
   color: $black;
   transition: background 200ms ease;
 
-  @include respond(0, 690px) {-
+  @include respond(0, 690px) {
     margin-top: 15px;
   }
 
