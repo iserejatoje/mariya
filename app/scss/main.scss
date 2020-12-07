@@ -1227,16 +1227,12 @@ select {
 
 .detail__block {
   position: relative;
-
   @include respond(690px) {
     margin-top: 60px;
   }
-
   @include respond(0, 690px) {
-    margin-top: 30px;
+    margin-top: 15px;
   }
-
-
   @include respond(1010px) {
     display: flex;
   }
@@ -1418,6 +1414,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   font-family: "Proxima Nova Lt", sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -1426,8 +1423,8 @@ footer {
   color: $black;
   transition: background 200ms ease;
 
-  @include respond(0, 690px) {
-    margin-top: 30px;
+  @include respond(0, 690px) {-
+    margin-top: 15px;
   }
 
   &:hover {
@@ -1511,8 +1508,8 @@ footer {
   color: $black;
   letter-spacing: 1px;
   font-size: 16px;
+  padding: 0 10px;
   text-transform: uppercase;
-  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1521,11 +1518,21 @@ footer {
 
   @include respond(690px) {
     min-width: 315px;
+    height: 90px;
     flex: 1;
+  }
+  @include respond(0, 690px) {
+    height: 60px;
   }
 
   &:hover {
     color: $green;
+  }
+}
+
+.detail__image {
+  img {
+    width: 100%;
   }
 }
 
@@ -1543,9 +1550,15 @@ footer {
   cursor: pointer;
   letter-spacing: 0.8px;
   border: none;
-  height: 90px;
   box-sizing: border-box;
   outline: 0;
+
+  @include respond(690px) {
+    height: 90px;
+  }
+  @include respond(0, 690px) {
+    height: 60px;
+  }
   @include respond(960px) {
     justify-content: flex-end;
   }
@@ -1567,7 +1580,12 @@ footer {
     }
   }
   svg {
-    margin-left: 40px;
+    @include respond(960px) {
+      margin-left: 40px;
+    }
+    @include respond(0, 960px) {
+      margin-left: 20px;
+    }
     fill: $white;
     transition: transform 200ms ease;
   }
