@@ -9,7 +9,7 @@
 }
 
 @mixin ProximaNovaRegular {
-  font-family: 'Proxima Nova Lt', sans-serif;
+  font-family: 'Proxima Nova Rg', sans-serif;
   font-weight: 400;
 }
 
@@ -63,6 +63,15 @@ body {
         margin-bottom: 60px;
       }
     }
+  }
+}
+
+.padding__wrapper {
+  @include respond(690px) {
+    padding-left: 44px;
+  }
+  @include respond(0, 690px) {
+    padding-left: 20px;
   }
 }
 
@@ -122,6 +131,43 @@ body {
     }
   }
 
+  .page__headline {
+
+    @include respond(1020px) {
+      font-size: 44px;
+    }
+    @include respond(0, 1020px) {
+      font-size: 27px;
+    }
+
+    font-family: "Bebas Neue", sans-serif;
+    color: $black;
+    font-weight: bold;
+    line-height: 1.318;
+    margin: 0;
+    letter-spacing: .5px;
+
+    position: relative;
+    @include respond(690px) {
+      padding-left: 44px;
+    }
+    @include respond(0, 690px) {
+      padding-left: 20px;
+    }
+
+    &:before {
+      pointer-events: none;
+      user-select: none;
+      background: $black;
+      content: '';
+      position: absolute;
+      width: 3px;
+      top: -16px;
+      left: -1px;
+      bottom: -15px;
+    }
+  }
+
   h2 {
 
     @include respond(1020px) {
@@ -147,7 +193,6 @@ body {
         padding-left: 20px;
       }
 
-      padding-left: 44px;
       &:before {
         pointer-events: none;
         user-select: none;
@@ -454,6 +499,73 @@ form {
   }
 }
 
+.project__card {
+  &:not(.project__card-gray) {
+    background: $white;
+  }
+  &.project__card-gray {
+    background: $projects-background;
+  }
+}
+
+.similar__slider {
+  opacity: 0;
+  visibility: hidden;
+  margin-bottom: -29px;
+  &.owl-loaded {
+    opacity: 1;
+    visibility: visible;
+  }
+  .owl-stage-outer {
+    padding-bottom: 74px;
+  }
+
+}
+
+.similar__wrapper {
+  @include respond(690px) {
+    margin-top: 132px;
+    margin-bottom: 78px;
+  }
+  @include respond(0, 690px) {
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+}
+
+.similar__title {
+  font-family: "Bebas Neue", sans-serif;
+  color: $black;
+  font-weight: bold;
+  line-height: 1.194;
+  position: relative;
+  letter-spacing: .4px;
+
+  @include respond(1020px) {
+    font-size: 73px;
+  }
+  @include respond(0, 1020px) {
+    font-size: 40px;
+  }
+  @include respond(690px) {
+    padding-left: 44px;
+  }
+  @include respond(0, 690px) {
+    padding-left: 20px;
+  }
+  &:before {
+    pointer-events: none;
+    user-select: none;
+    background: $black;
+    content: '';
+    position: absolute;
+    width: 3px;
+    top: -13px;
+    left: -1px;
+    bottom: -8px;
+  }
+}
+
 .page__subtitle {
   font-family: "Bebas Neue", sans-serif;
   color: $black;
@@ -491,12 +603,87 @@ picture {
 
   img {
     display: block;
+    object-fit: cover;
   }
 }
 
 picture,
 img {
   max-width: 100%;
+}
+
+.values {
+  .field {
+    max-width: 270px;
+    width: 100%;
+  }
+}
+
+.detail__table {
+  font-size: 18px;
+  margin-top: 50px;
+  display: flex;
+  @include respond(0, 1000px) {
+    flex-direction: column;
+    margin-bottom: 55px;
+  }
+  @include respond(1000px) {
+    margin-bottom: 112px;
+  }
+  .row {
+    display: flex;
+    margin-bottom: 20px;
+    @include respond(0, 490px) {
+      flex-direction: column;
+    }
+    .field,
+    .value {
+      flex: 1;
+      line-height: 1.4;
+    }
+  }
+  .column {
+    flex: 1;
+  }
+  .field {
+    @include ProximaNovaRegular;
+  }
+  .value {
+    sup {
+      font-size: 12px;
+    }
+    text-transform: lowercase;
+    @include ProximaNovaMedium;
+  }
+}
+
+
+.schemas {
+  justify-content: space-between;
+  max-width: 1101px;
+  margin-bottom: 116px;
+  display: grid;
+  grid-column-gap: 154px;
+  grid-row-gap: 50px;
+  position: relative;
+
+  @include respond(1010px) {
+    margin-left: 48px;
+    margin-top: 83px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include respond(0, 1010px) {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+
+  .title {
+    font-size: 18px;
+    font-family: "Proxima Nova Rg", sans-serif;
+    color: transparentize($black, .4);
+    margin-top: 26px;
+  }
 }
 
 .schema {
@@ -716,6 +903,40 @@ img {
   }
 }
 
+.prev,
+.next {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+
+  @include respond(560px) {
+    padding: 19px 21px;
+  }
+  @include respond(0, 560px) {
+    padding: 12px 8px;
+    svg {
+      max-width: 44px;
+    }
+  }
+  &:hover {
+    background: linear-gradient(-10deg, rgb(23,161,165) 0%, rgb(142,218,192) 100%);
+    svg {
+      fill: $white;
+    }
+  }
+}
+
+.prev {
+  svg {
+    transform: scale(-1, -1);
+  }
+}
+
 .pagination {
   margin-top: 45px;
   display: flex;
@@ -754,32 +975,11 @@ img {
   svg {
     display: block;
   }
-  .prev,
-  .next {
-    @include respond(560px) {
-      padding: 19px 21px;
-    }
-    @include respond(0, 560px) {
-      padding: 12px 8px;
-      svg {
-        max-width: 44px;
-      }
-    }
-    &:hover {
-      background: linear-gradient(-10deg, rgb(23,161,165) 0%, rgb(142,218,192) 100%);
-      svg {
-        fill: $white;
-      }
-    }
-  }
+
   .next {
     margin-left: 5px;
   }
-  .prev {
-    svg {
-      transform: scale(-1, -1);
-    }
-  }
+
 }
 
 .light__select {
@@ -831,11 +1031,7 @@ select {
   }
 }
 
-.projects__gray-block {
-  margin-top: 50px;
-  padding: 60px 0;
-  background: $projects-background;
-
+.projects__block {
   .projects__grid {
     position: relative;
     display: grid;
@@ -891,7 +1087,6 @@ select {
 
   .project__card {
     position: relative;
-    background: $white;
     text-decoration: none;
     color: $black;
     box-shadow: none;
@@ -940,7 +1135,10 @@ select {
     }
 
     &:hover {
-      box-shadow: 7.5px 12.99px 35px 0 rgba(23, 161, 165, 0.4);
+
+      @include respond(960px) {
+        box-shadow: 7.5px 12.99px 35px 0 rgba(23, 161, 165, 0.4);
+      }
 
       .overlay {
         opacity: 1;
@@ -1009,6 +1207,94 @@ select {
   }
 }
 
+.slider__button {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  @include respond(960px) {
+    margin-bottom: 174px;
+  }
+  @include respond(0, 960px) {
+    margin-bottom: 75px;
+  }
+}
+
+.projects__gray-block {
+  margin-top: 50px;
+  padding: 60px 0;
+  background: $projects-background;
+}
+
+.detail__block {
+  position: relative;
+
+  @include respond(690px) {
+    margin-top: 60px;
+  }
+
+  @include respond(0, 690px) {
+    margin-top: 30px;
+  }
+
+
+  @include respond(1010px) {
+    display: flex;
+  }
+
+  .detail__info {
+    padding-top: 30px;
+
+    @include respond(1010px) {
+      min-width: 274px;
+      padding-left: 42px;
+    }
+  }
+
+  .detail__text {
+    font-family: "Proxima Nova Rg", sans-serif;
+    font-size: 18px;
+    color: transparentize($black, .4);
+    margin-top: 30px;
+    line-height: 1.778;
+    @include respond(1010px) {
+      max-width: 240px;
+    }
+  }
+
+  .price {
+    font-family: "Bebas Neue",sans-serif;
+    font-weight: 700;
+    font-size: 66px;
+    letter-spacing: .6px;
+  }
+
+  .area {
+    font-family: "Bebas Neue",sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    letter-spacing: .6px;
+    margin-top: 15px;
+
+    sup {
+      top: -15px;
+      font-size: 25px;
+    }
+  }
+
+  .options {
+    font-family: "Proxima Nova Rg", sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+
+    .row {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.detail__page,
 .projects__page {
 
   @include respond(1020px) {
@@ -1102,7 +1388,192 @@ footer {
   }
 }
 
-.green-button {
+.slider__controls {
+  display: flex;
+  align-items: center;
+  @include respond(0, 690px) {
+    margin-top: 25px;
+  }
+  .prev {
+    margin-right: 20px;
+  }
+}
+
+.title-columns {
+
+  @include respond(690px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
+
+.back__link {
+  height: 54px;
+  max-width: 241px;
+  width: 100%;
+  text-transform: uppercase;
+  border: 3px solid $light-button-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Proxima Nova Lt", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .7px;
+  text-decoration: none;
+  color: $black;
+  transition: background 200ms ease;
+
+  @include respond(0, 690px) {
+    margin-top: 30px;
+  }
+
+  &:hover {
+    background: #eaeaec;
+    svg {
+      transform: translateX(10px);
+    }
+  }
+
+  svg {
+    margin-left: 45px;
+    transition: transform 200ms ease;
+  }
+}
+
+.bottom__controls {
+  display: flex;
+
+  @include respond(0, 690px) {
+    flex-direction: column;
+  }
+}
+
+.tabs {
+  display: flex;
+  margin-top: 52px;
+  @include respond(1010px) {
+    margin-left: 44px;
+    max-width: 600px;
+    justify-content: space-between;
+  }
+  @include respond(0, 1010px) {
+    margin-left: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tab {
+    @include respond(0, 1010px) {
+      &:nth-child(2) {
+        margin: 18px 0;
+      }
+    }
+    @include ProximaNovaMedium;
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: $black;
+    position: relative;
+    transition: color 200ms ease;
+
+    &:after {
+      transition: opacity 200ms linear, visibility 200ms linear;
+      content: '';
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      width: 2px;
+      height: 19px;
+      top: -3px;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+      background: $green;
+      left: -15px;
+      display: block;
+    }
+
+    &:hover {
+      color: $green;
+      &:after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.consultant__link {
+  @include ProximaNovaMedium;
+  text-decoration: none;
+  color: $black;
+  letter-spacing: 1px;
+  font-size: 16px;
+  text-transform: uppercase;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $consultant-background;
+  transition: color 200ms ease;
+
+  @include respond(690px) {
+    min-width: 315px;
+    flex: 1;
+  }
+
+  &:hover {
+    color: $green;
+  }
+}
+
+.long__button {
+  @include ProximaNovaMedium;
+  text-decoration: none;
+  background-image: linear-gradient(0, rgb(23,161,165) 0%, rgb(142,218,192) 100%);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: $white;
+  padding-left: 15px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 0.8px;
+  border: none;
+  height: 90px;
+  box-sizing: border-box;
+  outline: 0;
+  @include respond(960px) {
+    justify-content: flex-end;
+  }
+  @include respond(0, 960px) {
+    justify-content: center;
+  }
+  @include respond(1010px) {
+    max-width: 630px;
+  }
+  @include respond(1048px) {
+    padding-right: 52px;
+  }
+  @include respond(0, 1048px) {
+    padding-right: 15px;
+  }
+  &:hover {
+    svg {
+      transform: translateX(5px);
+    }
+  }
+  svg {
+    margin-left: 40px;
+    fill: $white;
+    transition: transform 200ms ease;
+  }
+}
+
+.btn {
   @include ProximaNovaMedium;
   text-decoration: none;
   background-image: linear-gradient(0, rgb(23,161,165) 0%, rgb(142,218,192) 100%);
@@ -1112,49 +1583,44 @@ footer {
   color: $white;
   font-size: 16px;
   text-transform: uppercase;
+  cursor: pointer;
   letter-spacing: 0.8px;
   justify-content: center;
+  border: none;
+  outline: 0;
 
-  &.filter__button {
+  &__filter {
     height: 60px;
-    transform: translateY(6px);
-
-    &:hover {
-      svg {
-        transform: translateX(5px);
-      }
-    }
   }
 
-  &:not(.wild):not(.filter__button) {
+  &__feedback {
     max-width: 330px;
     height: 90px;
   }
 
-  &.wild,
-  &:not(.wild):not(.filter__button) {
-    &:hover {
-      svg {
-        @include respond(1644px) {
-          transform: translateX(15px);
-        }
-        @include respond(0, 1644px) {
-          transform: translateX(10px);
-        }
-      }
-    }
-  }
-
-  &.wild {
+  &__wild {
     max-width: 370px;
     height: 92px;
+    padding: 0 15px;
+    box-sizing: border-box;
   }
 
   svg {
     display: block;
     fill: $white;
     margin-left: 38px;
-    transition: transform 500ms ease;
+    transition: transform 200ms ease;
+  }
+
+  &:hover {
+    svg {
+      @include respond(1644px) {
+        transform: translateX(6px);
+      }
+      @include respond(0, 1644px) {
+        transform: translateX(6px);
+      }
+    }
   }
 
 }
@@ -1166,7 +1632,7 @@ footer {
   font-family: "Proxima Nova Lt", sans-serif;
   font-weight: 600;
   transition: color 250ms ease;
-  @include respond(540px) {
+  @include respond(577px) {
     margin-left: 44px;
   }
   &:hover {
@@ -1231,7 +1697,7 @@ nav {
     }
 
     &:before {
-      transition: opacity 300ms linear, visibility 300ms linear;
+      transition: opacity 200ms linear, visibility 200ms linear;
       content: '';
       position: absolute;
       opacity: 0;
@@ -1295,8 +1761,7 @@ header {
       max-width: 185px;
     }
   }
-
-  .feedback__button {
+  .btn-feedback {
     @include respond(0, 690px) {
       display: none;
     }

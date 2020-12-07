@@ -58,9 +58,21 @@ $inner-height   : $height;
   }
 }
 
+
+
 .selectric-sort {
   background: $select-background;
   height: 60px;
+  &.selectric-below {
+    .selectric-items {
+      border-top: 2px solid $green;
+    }
+  }
+  &.selectric-above {
+    .selectric-items {
+      border-bottom: 2px solid $green;
+    }
+  }
   .button {
     width: 54px;
     height: 60px;
@@ -71,7 +83,6 @@ $inner-height   : $height;
   }
 
   .selectric-items {
-    border-top: 2px solid $green;
     top: 100%;
     li {
       display: block;
