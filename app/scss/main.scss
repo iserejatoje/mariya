@@ -1402,7 +1402,6 @@ footer {
     justify-content: space-between;
     align-items: center;
   }
-
 }
 
 .back__link {
@@ -1424,7 +1423,7 @@ footer {
   transition: background 200ms ease;
 
   @include respond(0, 690px) {
-    margin-top: 15px;
+    margin-top: 22px;
   }
 
   &:hover {
