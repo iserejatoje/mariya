@@ -683,7 +683,7 @@ img {
   .title {
     font-size: 18px;
     font-family: "Proxima Nova Rg", sans-serif;
-    color: transparentize($black, .4);
+    color: transparentize($black, .32);
     margin-top: 26px;
   }
 }
@@ -1251,7 +1251,7 @@ select {
   .detail__text {
     font-family: "Proxima Nova Rg", sans-serif;
     font-size: 18px;
-    color: transparentize($black, .4);
+    color: transparentize($black, .32);
     margin-top: 30px;
     line-height: 1.778;
     @include respond(1010px) {

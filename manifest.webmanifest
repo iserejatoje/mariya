@@ -1,0 +1,10 @@
+{
+  "short_name": "Mariya Fedorova",
+  "name": "Mariya Fedorova",
+  "description": "",
+  "start_url": "/?source=pwa",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#17a1a5"
+}
