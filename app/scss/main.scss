@@ -443,7 +443,6 @@ body {
   margin: 0;
   position: relative;
   display: inline-block;
-
   svg {
     fill: transparentize($black, .92);
     position: absolute;
@@ -454,8 +453,13 @@ body {
       top: 5px;
     }
 
-    @include respond(0, 1020px) {
+    @include respond(640px, 1020px) {
       height: 39px;
+      right: -76px;
+      top: 3px;
+    }
+    @include respond(0, 640px) {
+      height: 27px;
       right: -76px;
       top: 3px;
     }
