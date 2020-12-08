@@ -802,6 +802,7 @@ form {
 
 .slider__button-index {
   margin-top: 45px;
+  margin-bottom: 98px;
 }
 
 .project__card {
@@ -1535,11 +1536,16 @@ select {
   position: relative;
   display: flex;
   justify-content: flex-end;
-  @include respond(960px) {
-    margin-bottom: 174px;
+  .index {
+    margin-bottom: 98px;
   }
-  @include respond(0, 960px) {
-    margin-bottom: 75px;
+  &.detail {
+    @include respond(1025px) {
+      margin-bottom: 174px;
+    }
+    @include respond(0, 1025px) {
+      margin-bottom: 75px;
+    }
   }
 }
 
@@ -1783,7 +1789,7 @@ footer {
       max-width: 600px;
     }
     &.tabs__index {
-      max-width: 390px;
+      max-width: 434px;
       transform: translateY(-10px);
     }
     justify-content: space-between;
@@ -1989,6 +1995,40 @@ footer {
     }
   }
 
+}
+
+.certs__items {
+  position: relative;
+  margin-top: 77px;
+  display: flex;
+  @include respond(1330px) {
+    justify-content: space-between;
+    grid-gap: 77px;
+  }
+  @include respond(0, 1330px) {
+    flex-wrap: wrap;
+    grid-gap: 30px;
+  }
+  @include respond(940px) {
+    margin-bottom: 268px;
+  }
+  @include respond(0, 940px) {
+    margin-bottom: 100px;
+  }
+  .item {
+    text-align: center;
+    picture,
+    img {
+      display: inline-block;
+    }
+  }
+  img {
+    @include respond(990px) {
+      height: 395px;
+      object-fit: cover;
+    }
+
+  }
 }
 
 .reset__filter {
