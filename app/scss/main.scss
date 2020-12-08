@@ -253,6 +253,246 @@ body {
   }
 }
 
+.about__hello {
+  @include ProximaNovaMedium;
+  margin-bottom: 17px;
+  font-size: 20px;
+  span {
+    color: $green;
+  }
+}
+
+.about__columns {
+  position: relative;
+  @include respond(980px) {
+    display: flex;
+  }
+  @include respond(0, 1240px) {
+    padding: 35px 0;
+  }
+
+  .about__image-block {
+    max-width: 630px;
+    width: 100%;
+    @include respond(1240px) {
+      padding-right: 83px;
+    }
+    @include respond(980px, 1240px) {
+      padding-right: 45px;
+    }
+    box-sizing: border-box;
+  }
+  .about__info {
+    flex: 1;
+
+    @include respond(980px) {
+      min-width: 565px;
+    }
+    @include respond(1240px) {
+      margin-top: 172px;
+    }
+    @include respond(0, 1240px) {
+      margin-top: 40px;
+    }
+
+    .text {
+      font-size: 20px;
+      font-family: "Proxima Nova Rg", sans-serif;
+      color: $black;
+      line-height: 1.6;
+      margin-top: 25px;
+      @include respond(690px) {
+        padding-left: 48px;
+      }
+      @include respond(980px) {
+        max-width: 468px;
+      }
+    }
+  }
+}
+
+.button__wrapper {
+  @include respond(0, 940px) {
+    margin: 25px 15px 15px;
+    max-width: 370px;
+  }
+  @include respond(940px) {
+    position: absolute;
+  }
+  @include respond(1366px) {
+    height: 535px;
+    right: calc(100% - 692px);
+  }
+  @include respond(940px, 1366px) {
+    height: 380px;
+    right: calc(100% - 392px);
+  }
+  left: 0;
+  bottom: 0;
+}
+
+.home__block {
+  position: relative;
+  @include respond(940px) {
+    margin-bottom: 105px;
+    padding-top: 219px;
+  }
+  @include respond(0, 940px) {
+    padding-top: 42px;
+    margin-bottom: 55px;
+  }
+
+  picture {
+
+    img {
+
+      @include respond(0, 1366px) {
+        height: 542px;
+      }
+      @include respond(1366px) {
+        height: 764px;
+      }
+      object-fit: cover;
+    }
+
+    @include respond(0, 940px) {
+      display: none;
+    }
+  }
+}
+
+.home__description {
+  @include ProximaNovaMedium;
+  font-size: 20px;
+  margin-top: 26px;
+  line-height: 1.6;
+  @include respond(690px) {
+    padding-left: 46px;
+  }
+  span {
+    color: $green;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000000;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.stats__block {
+  @include respond(690px) {
+    margin-bottom: 94px;
+  }
+  @include respond(0, 690px) {
+    margin-bottom: 16px;
+  }
+}
+
+.stats__items {
+  max-width: 1230px;
+  display: flex;
+  position: relative;
+  @include respond(0, 690px) {
+    flex-direction: column;
+  }
+  .item {
+    &:nth-child(1) {
+      max-width: 458px;
+      width: 100%;
+    }
+    &:nth-child(2) {
+      max-width: 489px;
+      width: 100%;
+    }
+    &:not(:last-child) {
+      .text {
+        @include respond(0, 690px) {
+          margin-bottom: 46px;
+        }
+      }
+    }
+  }
+  .text {
+    @include ProximaNovaMedium;
+    font-size: 20px;
+    margin-top: 12px;
+    line-height: 1.6;
+
+    @include respond(690px) {
+      padding-left: 53px;
+      max-width: 150px;
+    }
+  }
+}
+
+.h1 {
+  font-family: "Bebas Neue", sans-serif;
+  color: $black;
+  font-weight: bold;
+  line-height: 1.194;
+  letter-spacing: .7px;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+
+  svg {
+    fill: transparentize($black, .92);
+    position: absolute;
+
+    @include respond(1020px) {
+      height: 67px;
+      right: -122px;
+      top: 5px;
+    }
+
+    @include respond(0, 1020px) {
+      height: 39px;
+      right: -76px;
+      top: 3px;
+    }
+
+  }
+
+  @include respond(1020px) {
+    font-size: 72px;
+  }
+  @include respond(640px, 1020px) {
+    font-size: 44px;
+  }
+  @include respond(0, 640px) {
+    font-size: 30px;
+  }
+
+  @include respond(690px) {
+    padding-left: 44px;
+  }
+  @include respond(0, 690px) {
+    padding-left: 20px;
+  }
+
+  &:before {
+    pointer-events: none;
+    user-select: none;
+    background: $black;
+    content: '';
+    position: absolute;
+    width: 3px;
+    top: -12px;
+    left: -1px;
+    bottom: -8px;
+
+  }
+}
+
 .checkbox {
   font-family: 'Proxima Nova Rg', sans-serif;
   font-weight: 400;
@@ -294,10 +534,6 @@ body {
     height: 25px;
     background: $green url(../images/sprite.svg#check) no-repeat center;
   }
-}
-
-.long__page {
-
 }
 
 form {
@@ -502,12 +738,97 @@ form {
   }
 }
 
+.about__image-block {
+  position: relative;
+}
+
+.about__block {
+  background: $gray-background;
+  @include respond(980px) {
+    margin-bottom: 223px;
+  }
+  @include respond(0, 980px) {
+    margin-bottom: 60px;
+  }
+  picture {
+    @include respond(1240px) {
+      transform: translateY(100px);
+    }
+  }
+}
+
+.main__catalog {
+  @include respond(1010px) {
+    margin-top: 79px;
+  }
+  @include respond(0, 1010px) {
+    margin-top: 30px;
+  }
+}
+
+.large-title-44 {
+  font-family: "Bebas Neue", sans-serif;
+  color: $black;
+  font-weight: bold;
+  line-height: 1.194;
+  position: relative;
+  max-width: 360px;
+  letter-spacing: .4px;
+
+  @include respond(1020px) {
+    font-size: 73px;
+  }
+  @include respond(0, 1020px) {
+    font-size: 40px;
+  }
+  @include respond(690px) {
+    padding-left: 44px;
+  }
+  @include respond(0, 690px) {
+    padding-left: 20px;
+  }
+  &:before {
+    pointer-events: none;
+    user-select: none;
+    background: $black;
+    content: '';
+    position: absolute;
+    width: 3px;
+    top: -13px;
+    left: -1px;
+    bottom: -9px;
+  }
+}
+
+.slider__button-index {
+  margin-top: 45px;
+}
+
 .project__card {
   &:not(.project__card-gray) {
     background: $white;
   }
   &.project__card-gray {
     background: $projects-background;
+  }
+}
+
+.tabs__index {
+  max-width: 390px;
+  width: 100%;
+  margin-right: 196px;
+}
+
+.flexbox {
+  @include respond(1010px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tabs {
+    @include respond(0, 1010px) {
+      margin-top: 40px;
+    }
   }
 }
 
@@ -1452,14 +1773,23 @@ footer {
 
 .tabs {
   display: flex;
-  margin-top: 52px;
+  &:not(.tabs__index) {
+    margin-top: 52px;
+  }
+  box-sizing: border-box;
   @include respond(1010px) {
-    margin-left: 44px;
-    max-width: 600px;
+    padding-left: 44px;
+    &:not(.tabs__index) {
+      max-width: 600px;
+    }
+    &.tabs__index {
+      max-width: 390px;
+      transform: translateY(-10px);
+    }
     justify-content: space-between;
   }
   @include respond(0, 1010px) {
-    margin-left: 16px;
+    padding-left: 16px;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -1596,7 +1926,7 @@ footer {
 .btn {
   @include ProximaNovaMedium;
   text-decoration: none;
-  background-image: linear-gradient(0, rgb(23,161,165) 0%, rgb(142,218,192) 100%);
+  background-image: linear-gradient(-10deg, rgb(23,161,165) 0%, rgb(142,218,192) 100%);
   width: 100%;
   display: inline-flex;
   align-items: center;
@@ -1605,9 +1935,12 @@ footer {
   text-transform: uppercase;
   cursor: pointer;
   letter-spacing: 0.8px;
-  justify-content: center;
   border: none;
   outline: 0;
+
+  &:not(.btn__long) {
+    justify-content: center;
+  }
 
   &__filter {
     height: 60px;
@@ -1623,6 +1956,19 @@ footer {
     height: 92px;
     padding: 0 15px;
     box-sizing: border-box;
+  }
+
+  &__long {
+    height: 92px;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    @include respond(940px) {
+      padding: 0 50px 0 15px;
+    }
+    @include respond(0, 940px) {
+      padding: 0 25px 0 15px;
+    }
+    text-align: left;
   }
 
   svg {
@@ -1740,6 +2086,25 @@ nav {
       }
     }
   }
+}
+
+.home__elements {
+  @include respond(940px) {
+    position: absolute;
+  }
+  @include respond(1530px) {
+    top: 130px;
+  }
+  @include respond(1210px, 1530px) {
+    top: 50px;
+  }
+  @include respond(0, 1210px) {
+    top: 42px;
+  }
+}
+
+.headline {
+  max-width: 475px;
 }
 
 header {
